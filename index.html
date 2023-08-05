@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,18 +23,13 @@
 
     botao.addEventListener('click', somar);
 
-
     function somar(){
       const numbersArray = numbers.value.split(',');
       const total = numbersArray.reduce((value, current) => Number(value) + Number(current));
       
       result.value = total;
-      console.log('Calculo feito')
+      console.log('Calculo feito');
     }
-
-
   </script>
-
-
 </body>
 </html>
