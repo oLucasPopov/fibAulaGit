@@ -23,12 +23,24 @@
 
     botao.addEventListener('click', somar);
 
+    function containsNumbers(str) {
+      const strCorrect = str.substr(str.length - 1) === ',' ? str : `${str},`;
+      return /([^0-9][,])/.test(strCorrect);
+    }
+
     function somar(){
-      const numbersArray = numbers.value.split(',');
+      
+      if(!containsNumbers(numbers.value.toLowerCase())){
+      const numbersArray = numbers.value.replaceAll(/\s/g,'').split(',');
       const total = numbersArray.reduce((value, current) => Number(value) + Number(current));
       
       result.value = total;
+      result.disabled = false;
       console.log('Calculo feito');
+      return;
+      }
+      result.disabled = true;
+      result.value = 'Só aceita números';
     }
   </script>
 </body>
