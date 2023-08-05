@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Calculadora</h1>
+  <input id="numbers" type="text" placeholder="1, 2, 5, 10">
+  <label for="numbers">Insira os números a serem somados separado por vírgula</label>
+<br>
+  <input type="text" id="result" placeholder="O resultado será exibido aqui">
+  <input type="button" value="Somar" id="somar">
+
+
+  <script >
+    const numbers = document.querySelector('#numbers');
+    const result = document.querySelector('#result');
+    const botao = document.querySelector('#somar');
+
+    botao.addEventListener('click', somar);
+
+
+    function somar(){
+      const numbersArray = numbers.value.split(',');
+      let soma = 0;
+      for(let i = 0; i < numbersArray.length; i++){
+        soma += Number(numbersArray[i]);
+      }
+      result.value = soma;
+      console.log('soma finalizada')
+    }
+
+
+  </script>
+
+
+</body>
+</html>
