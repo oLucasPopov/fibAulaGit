@@ -26,11 +26,9 @@
 
     function somar(){
       const numbersArray = numbers.value.split(',');
-      let soma = 0;
-      for(let i = 0; i < numbersArray.length; i++){
-        soma += Number(numbersArray[i]);
-      }
-      result.value = soma;
+      const total = numbersArray.reduce((value, current) => Number(value) + Number(current));
+      
+      result.value = total;
       console.log('Calculo feito')
     }
 
